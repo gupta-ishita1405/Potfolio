@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --theme-canvas: #FFFDF9;
+    --theme-canvas-alt: #FFF4F6;
+    --theme-card-bg: #FFFFFF;
+    --theme-card-border: #F7C8D3;
+    --theme-primary: #B46A72;
+    --theme-primary-light: #FDE8ED;
+    --theme-primary-dark: #8E4F57;
+    --theme-secondary: #A8B58A;
+    --theme-accent: #A9B7C6;
+    --theme-highlight: #FFF7E6;
+    --theme-text: #2D3A47;
+    --theme-text-muted: #607080;
+    --theme-pill-bg: #F7C8D3;
+    --theme-pill-text: #2D3A47;
+    --theme-glow: rgba(247, 200, 211, 0.45);
+    
+    --font-display: 'Syne', sans-serif;
+    --font-serif-editorial: 'Instrument Serif', Georgia, serif;
+    --font-serif-chic: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-hand: 'Caveat', cursive;
+    --font-cursive: 'Alex Brush', cursive;
+    --font-cursive-pinyon: 'Pinyon Script', cursive;
+    --font-cursive-great: 'Great Vibes', cursive;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--theme-canvas);
+    color: var(--theme-text);
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif-editorial {
+  font-family: var(--font-serif-editorial);
+}
+
+.font-serif-chic {
+  font-family: var(--font-serif-chic);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+.font-handwriting {
+  font-family: var(--font-hand);
+}
+
+.font-cursive {
+  font-family: var(--font-cursive);
+}
+
+.font-cursive-pinyon {
+  font-family: var(--font-cursive-pinyon);
+}
+
+.font-cursive-great {
+  font-family: var(--font-cursive-great);
+}
+
+/* Dynamic Soft Theme Backgrounds & Borders */
+.bg-theme-canvas { background-color: var(--theme-canvas); }
+.bg-theme-canvas-alt { background-color: var(--theme-canvas-alt); }
+.bg-theme-card { background-color: var(--theme-card-bg); }
+.bg-theme-primary { background-color: var(--theme-primary); }
+.bg-theme-primary-light { background-color: var(--theme-primary-light); }
+.bg-theme-secondary { background-color: var(--theme-secondary); }
+.bg-theme-accent { background-color: var(--theme-accent); }
+.bg-theme-highlight { background-color: var(--theme-highlight); }
+.bg-theme-pill { background-color: var(--theme-pill-bg); }
+
+.text-theme-text { color: var(--theme-text); }
+.text-theme-muted { color: var(--theme-text-muted); }
+.text-theme-primary { color: var(--theme-primary); }
+.text-theme-primary-dark { color: var(--theme-primary-dark); }
+.text-theme-secondary { color: var(--theme-secondary); }
+.text-theme-pill { color: var(--theme-pill-text); }
+
+.border-theme-border { border-color: var(--theme-card-border); }
+.border-theme-primary { border-color: var(--theme-primary); }
+
+/* Glassmorphism Frosted Theme Styles */
+.glass-soft-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--theme-card-border);
+  box-shadow: 0 10px 30px -5px rgba(45, 58, 71, 0.05);
+}
+
+/* Cute Gen-Z Washi Tape styling */
+.washi-tape-pink {
+  position: relative;
+}
+.washi-tape-pink::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 30%;
+  width: 70px;
+  height: 22px;
+  background: var(--theme-pill-bg);
+  opacity: 0.85;
+  backdrop-filter: blur(2px);
+  transform: rotate(-3deg);
+  border-left: 2px dashed rgba(45, 58, 71, 0.2);
+  border-right: 2px dashed rgba(45, 58, 71, 0.2);
+  box-shadow: 0 2px 6px rgba(45, 58, 71, 0.08);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.washi-tape-sage::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: 25%;
+  width: 65px;
+  height: 20px;
+  background: var(--theme-secondary);
+  opacity: 0.8;
+  backdrop-filter: blur(2px);
+  transform: rotate(4deg);
+  border-left: 2px dashed rgba(45, 58, 71, 0.2);
+  border-right: 2px dashed rgba(45, 58, 71, 0.2);
+  box-shadow: 0 2px 6px rgba(45, 58, 71, 0.08);
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Soft Paper & Grid Aesthetics */
+.bg-grid-soft {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(45, 58, 71, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 58, 71, 0.04) 1px, transparent 1px);
+}
+
+.bg-dots-soft {
+  background-size: 24px 24px;
+  background-image: radial-gradient(var(--theme-primary) 1.2px, transparent 1.2px);
+  opacity: 0.35;
+}
+
+/* Holographic & Sticker Glow */
+.sticker-shadow {
+  box-shadow: 0 8px 24px -4px rgba(45, 58, 71, 0.12), 0 2px 6px -1px rgba(180, 106, 114, 0.08);
+}
+
+.polaroid-card {
+  background: #FFFFFF;
+  padding: 14px 14px 28px 14px;
+  box-shadow: 0 14px 34px -6px rgba(45, 58, 71, 0.12), 0 4px 12px rgba(45, 58, 71, 0.05);
+  border: 1px solid var(--theme-card-border);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-6px) rotate(1deg);
+  box-shadow: 0 22px 45px -8px rgba(45, 58, 71, 0.18);
+}
+
+/* Custom Soft Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-card-border);
+  border-radius: 6px;
+  border: 2px solid var(--theme-canvas);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-primary);
+}
+
+/* Floating animation */
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+.animate-float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-soft 6s ease-in-out infinite reverse;
+}
+
+/* Custom selection */
+::selection {
+  background-color: var(--theme-pill-bg);
+  color: var(--theme-text);
+}
+
